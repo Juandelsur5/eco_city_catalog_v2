@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_eco_city_user,eco.city user,eco_city_catalog_v2.model_eco_city,,1,1,1,1
-access_eco_neighborhood_user,eco.neighborhood user,eco_city_catalog_v2.model_eco_neighborhood,,1,1,1,1
+access_eco_city_user,eco.city user,model_eco_city,,1,1,1,1
+access_eco_neighborhood_user,eco.neighborhood user,model_eco_neighborhood,,1,1,1,1
