@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Grupo Administrador -->
+    <record id="group_eco_city_catalog_admin" model="res.groups">
+        <field name="name">ECO Catálogo - Administrador</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Reglas base: sin reglas de registro (solo ACL). -->
+</odoo>
