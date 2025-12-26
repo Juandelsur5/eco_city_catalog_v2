@@ -8,7 +8,6 @@
     'depends': ['base', 'contacts'],
     'data': [
         'security/eco_city_security.xml',
-        'security/ir.model.access.csv',
         'views/eco_city_views.xml',
         'views/eco_neighborhood_views.xml',
         'views/res_partner_views.xml',
