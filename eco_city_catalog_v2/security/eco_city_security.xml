@@ -1,10 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Grupo Administrador -->
+
+    <!-- Grupo administrador Eco -->
     <record id="group_eco_city_catalog_admin" model="res.groups">
         <field name="name">ECO Catálogo - Administrador</field>
         <field name="category_id" ref="base.module_category_hidden"/>
     </record>
 
-    <!-- Reglas base: sin reglas de registro (solo ACL). -->
+    <!-- eco.city: lectura para usuarios internos -->
+    <record id="access_eco_city_user_read" model="ir.model.access">
+        <field name="name">eco.city user read</field>
+        <field name="model_id" ref="model_eco_city"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <!-- eco.neighborhood: lectura para usuarios internos -->
+    <record id="access_eco_neighborhood_user_read" model="ir.model.access">
+        <field name="name">eco.neighborhood user read</field>
+        <field name="model_id" ref="model_eco_neighborhood"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <!-- Admin Eco: control total -->
+    <record id="access_eco_city_admin_full" model="ir.model.access">
+        <field name="name">eco.city admin full</field>
+        <field name="model_id" ref="model_eco_city"/>
+        <field name="group_id" ref="group_eco_city_catalog_admin"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="access_eco_neighborhood_admin_full" model="ir.model.access">
+        <field name="name">eco.neighborhood admin full</field>
+        <field name="model_id" ref="model_eco_neighborhood"/>
+        <field name="group_id" ref="group_eco_city_catalog_admin"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <!-- Superuser/Settings: control total (por si el admin no está en el grupo eco) -->
+    <record id="access_eco_city_system_full" model="ir.model.access">
+        <field name="name">eco.city system full</field>
+        <field name="model_id" ref="model_eco_city"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="access_eco_neighborhood_system_full" model="ir.model.access">
+        <field name="name">eco.neighborhood system full</field>
+        <field name="model_id" ref="model_eco_neighborhood"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
 </odoo>
