@@ -6,12 +6,17 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='street']" position="after">
-                <field name="eco_country_id"/>
-                <field name="eco_state_id"/>
-                <field name="eco_city_id"/>
-                <field name="eco_neighborhood_id"/>
+
+            <!-- Insertar Eco Location justo después del bloque de dirección -->
+            <xpath expr="//field[@name='country_id']/ancestor::group[1]" position="after">
+                <group string="Eco Location">
+                    <field name="eco_country_id"/>
+                    <field name="eco_state_id"/>
+                    <field name="eco_city_id"/>
+                    <field name="eco_neighborhood_id"/>
+                </group>
             </xpath>
+
         </field>
     </record>
 
